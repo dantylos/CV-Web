@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Rubik:wght@300..900&display=swap');
+
+
+// Colors
+$black: #1a1a1a;
+$white: #eee3ff;
+$dark_grey: #2d2d2d;
+$yello: #cade1e;
+
+
+:root {
+    font-family: "Manrope", sans-serif;
+
+    ul, ol{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+        display: inline-block;
+    }
+}
+
+@mixin basic_flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $black;
+}
+
+.container{
+    margin: auto;
+    max-width: 1200px;
+}
+
+
+//Header
+header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 2rem 0;
+
+    .container{
+        @include basic_flex;
+
+        #initials{
+            font-size: 2.5rem;
+            color: $yello;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+
+        nav{
+            ul{
+                display: flex;
+                justify-content: space-evenly;
+                gap: 4rem;
+
+                li{
+                    a{
+                        color: $white;
+                        text-transform: uppercase;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        letter-spacing: 2px;
+                        word-spacing: 0.25rem;
+                        transition: 0.1s;
+
+                        &:hover{
+                            color: $yello;
+                            transform: scale(1.02);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//Main
+main{
+    h1 {
+        font-weight: 300;
+        color: $yello;
+        font-size: 4rem;
+        text-align: center;
+    }
+}
+
+
+
+
