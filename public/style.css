@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Rubik:wght@300..900&display=swap");
 :root {
   font-family: "Manrope", sans-serif;
+  color: #f7ffda;
 }
 :root ul, :root ol {
   list-style: none;
@@ -18,7 +19,7 @@
 }
 
 body {
-  background-color: #1a1a1a;
+  background-color: #1c1c1c;
 }
 
 .container {
@@ -26,16 +27,37 @@ body {
   max-width: 1200px;
 }
 
+.typed {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 2s steps(30, end) forwards, blink-caret 0.95s step-end;
+}
+
+@keyframes typing {
+  from {
+    width: 10%;
+  }
+  to {
+    width: 100%;
+  }
+}
 header {
   position: sticky;
   top: 0;
+  z-index: 100;
   width: 100%;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1440px;
 }
 header .container #initials {
   font-size: 2.5rem;
@@ -49,7 +71,7 @@ header .container nav ul {
   gap: 4rem;
 }
 header .container nav ul li a {
-  color: #eee3ff;
+  color: #d6d6d6;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 400;
@@ -62,11 +84,60 @@ header .container nav ul li a:hover {
   transform: scale(1.02);
 }
 
-main h1 {
-  font-weight: 300;
-  color: #cade1e;
+main #about_me {
+  height: calc(100vh - 103.25px);
+  position: relative;
+}
+main #about_me .container {
+  padding-top: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main #about_me .container .main-info__info h1 {
+  font-weight: 500;
   font-size: 4rem;
+}
+main #about_me .container .main-info__info p {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+main #about_me .container .main-info__image {
+  max-width: 240px;
+}
+main #about_me .container .main-info__image img {
+  width: 100%;
+  display: block;
+  border-radius: 16%;
+}
+main #about_me .explore-link .explore-block {
+  position: absolute;
+  bottom: 3rem;
+  right: calc(50% - 72.4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #about_me .explore-link .explore-block p {
+  color: #d6d6d6;
+}
+main #about_me .explore-link .explore-block img {
+  width: 4rem;
+  height: 2rem;
+  display: block;
   text-align: center;
+  color: #d6d6d6;
+  transition: 0.5s;
+}
+main #about_me .explore-link .explore-block img:hover {
+  transform: translateY(12px);
+}
+main #projects {
+  padding-top: 8rem;
+}
+main #projects .container .project-item {
+  height: 50vh;
 }
 
 /*# sourceMappingURL=style.css.map */
