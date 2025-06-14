@@ -1,0 +1,15 @@
+@media screen and (max-width: 1480px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  main #about_me .container .main-info__info {
+    max-width: 580px;
+  }
+  main #about_me .container .main-info__info h1 {
+    font-size: 3rem !important;
+  }
+}
+
+/*# sourceMappingURL=adaptive.css.map */

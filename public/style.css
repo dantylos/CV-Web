@@ -1,3 +1,4 @@
+@import "adaptive.css";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Rubik:wght@300..900&display=swap");
 :root {
   font-family: "Manrope", sans-serif;
@@ -9,6 +10,9 @@
 :root a {
   text-decoration: none;
   display: inline-block;
+}
+:root::selection {
+  background-color: #ad87d8;
 }
 
 * {
@@ -134,10 +138,77 @@ main #about_me .explore-link .explore-block img:hover {
   transform: translateY(12px);
 }
 main #projects {
-  padding-top: 8rem;
+  padding-top: 7.5rem;
+}
+main #projects .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 }
 main #projects .container .project-item {
-  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  min-height: 320px;
+  max-width: 800px;
+  border: 1px solid #d6d6d6;
+  padding: 32px 16px 20px;
+  border-radius: 12px;
+  background-color: #000;
+}
+main #projects .container .project-item .project-item__image {
+  align-self: center;
+  max-width: 200px;
+}
+main #projects .container .project-item .project-item__image img {
+  width: 100%;
+  display: block;
+}
+main #projects .container .project-item .project-item__info {
+  max-width: 560px;
+}
+main #projects .container .project-item .project-item__info h4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+main #projects .container .project-item .project-item__info details {
+  margin-top: 2rem;
+}
+main #projects .container .project-item .project-item__info details summary {
+  cursor: pointer;
+}
+main #skills {
+  padding: 8rem 0 4rem;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
+}
+main #skills .slider {
+  overflow: hidden;
+  width: 100%;
+}
+main #skills .slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: 3000px;
+  align-items: center;
+  gap: 2rem;
+}
+main #skills .slider .slide {
+  max-width: 200px;
+}
+main #skills .slider .slide img {
+  width: 100%;
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
