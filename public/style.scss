@@ -240,30 +240,55 @@ main{
     .container{
 
     }
-    $animationSpeed: 40s;
 
-    // Animation
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-250px * 12))}
+
+    @mixin gradient {
+      background: linear-gradient(to right,  rgba(28,28,28,1) 0%,rgba(255,255,255,0) 100%);
     }
 
+    $animationSpeed: 30s;
 
-    // Styling
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-250px * 5))}
+    }
+
     .slider {
+      height: 100px;
+      margin: auto;
       overflow: hidden;
+      position: relative;
       width: 100%;
+
+      &::before, &::after {
+        @include gradient;
+        content: "";
+        height: 80px;
+        position: absolute;
+        width: 100px;
+        z-index: 2;
+      }
+      &::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+      }
+      &::before {
+        left: 0;
+        top: 0;
+      }
 
       .slide-track {
         animation: scroll $animationSpeed linear infinite;
         display: flex;
-        width: calc(250px * 6);
         align-items: center;
-        gap: 6rem;
+        width: calc(250px * 10);
+        gap: 12rem;
       }
 
       .slide {
         max-width: 80px;
+        opacity: 0.85;
 
         img{
           width: 100%;

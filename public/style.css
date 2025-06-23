@@ -189,22 +189,43 @@ main #skills {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-3000px);
+    transform: translateX(-1250px);
   }
 }
 main #skills .slider {
+  height: 100px;
+  margin: auto;
   overflow: hidden;
+  position: relative;
   width: 100%;
 }
+main #skills .slider::before, main #skills .slider::after {
+  background: linear-gradient(to right, rgb(28, 28, 28) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 80px;
+  position: absolute;
+  width: 100px;
+  z-index: 2;
+}
+main #skills .slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+main #skills .slider::before {
+  left: 0;
+  top: 0;
+}
 main #skills .slider .slide-track {
-  animation: scroll 40s linear infinite;
+  animation: scroll 30s linear infinite;
   display: flex;
-  width: 1500px;
   align-items: center;
-  gap: 6rem;
+  width: 2500px;
+  gap: 12rem;
 }
 main #skills .slider .slide {
   max-width: 80px;
+  opacity: 0.85;
 }
 main #skills .slider .slide img {
   width: 100%;
