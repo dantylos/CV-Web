@@ -189,7 +189,7 @@ main #skills {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-1750px);
+    transform: translateX(-3000px);
   }
 }
 main #skills .slider {
@@ -199,12 +199,12 @@ main #skills .slider {
 main #skills .slider .slide-track {
   animation: scroll 40s linear infinite;
   display: flex;
-  width: 3000px;
+  width: 1500px;
   align-items: center;
-  gap: 2rem;
+  gap: 6rem;
 }
 main #skills .slider .slide {
-  max-width: 200px;
+  max-width: 80px;
 }
 main #skills .slider .slide img {
   width: 100%;
